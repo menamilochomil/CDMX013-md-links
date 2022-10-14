@@ -1,7 +1,36 @@
 {
   "name": "md-links",
   "version": "0.1.0",
+  "description": "Get links from .md",
+  "main": "index.js",
+  "author": {
+    "name": "Jimena López",
+    "email": "jimenamilochomil@gmail.com",
+    "url": "https://github.com/menamilochomil/"
+  },
+  "bin": "cli.js",
   "engines": {
     "node": ">=16.x"
+  },
+  "scripts": {
+    "eslint": "eslint --ext .js src/ test/",
+    "pretest": "npm run eslint",
+    "test": "jest --verbose --coverage"
+  },
+  "keywords": [
+    "cli-app",
+    "mdlink",
+    "get-links",
+    "valid-link",
+    "filesystem"
+  ],
+  "dependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/plugin-transform-modules-commonjs": "^7.6.0",
+    "babel-jest": "^27.0.1",
+    "eslint": "^8.3.0",
+    "jest": "^27.0.1",
+    "mdLinks": "^1.1.0"
   }
+
 }
