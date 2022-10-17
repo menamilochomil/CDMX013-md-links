@@ -1,14 +1,13 @@
 {
-  "name": "md-links",
+  "name": "md-links-mena",
   "version": "0.1.0",
   "description": "Get links from .md",
   "main": "index.js",
-  "author": {
-    "name": "Jimena López",
-    "email": "jimenamilochomil@gmail.com",
-    "url": "https://github.com/menamilochomil/"
+  "author": "Jimena López <jimenamilochomil@gmail.com> (https://github.com/menamilochomil/)",
+  "license": "ISC",
+  "bin": {
+    "mdLinks": "cli.js"
   },
-  "bin": "cli.js",
   "engines": {
     "node": ">=16.x"
   },
@@ -29,8 +28,17 @@
     "@babel/plugin-transform-modules-commonjs": "^7.6.0",
     "babel-jest": "^27.0.1",
     "eslint": "^8.3.0",
-    "jest": "^27.0.1",
-    "mdLinks": "^1.1.0"
-  }
-
+    "jest": "^27.0.1"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/menamilochomil/CDMX013-md-links.git"
+  },
+  "bugs": {
+    "url": "https://github.com/menamilochomil/CDMX013-md-links/issues"
+  },
+  "homepage": "https://github.com/menamilochomil/CDMX013-md-links#readme"
 }
