@@ -5,6 +5,7 @@
   "main": "index.js",
   "author": "Jimena López <jimenamilochomil@gmail.com> (https://github.com/menamilochomil/)",
   "license": "ISC",
+  "type": "commonjs",
   "bin": {
     "mdLinks": "cli.js"
   },
@@ -24,11 +25,9 @@
     "filesystem"
   ],
   "dependencies": {
-    "@babel/core": "^7.6.2",
-    "@babel/plugin-transform-modules-commonjs": "^7.6.0",
-    "babel-jest": "^27.0.1",
     "eslint": "^8.3.0",
-    "jest": "^27.0.1"
+    "jest": "^27.0.1",
+    "markdown-it": "^13.0.1"
   },
   "directories": {
     "test": "test"
