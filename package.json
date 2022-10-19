@@ -25,9 +25,10 @@
     "filesystem"
   ],
   "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
     "eslint": "^8.3.0",
-    "jest": "^27.0.1",
-    "markdown-it": "^13.0.1"
+    "jest": "^27.0.1"
+
   },
   "directories": {
     "test": "test"
