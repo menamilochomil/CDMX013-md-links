@@ -11,7 +11,7 @@ let arrLinks =[]
 let countLinks = 0
 
 const data = fs.readFileSync(doc, 'utf8')
-const dataHTML = marked.parse(data)
+const dataHTML = marked.parse(data).replace(/<a href="#\d+-\D+">\d+. \D+<\/a>/g,"I replace #titles of md");
 const $ = cheerio.load(dataHTML);
 
 $('a').each((i, link) => {
