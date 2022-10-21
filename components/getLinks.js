@@ -8,9 +8,10 @@ const marked = require('marked');
 
 module.exports = (doc) => {
 let arrLinks =[]
-let countLinks = 0
 
+//Read the file
 const data = fs.readFileSync(doc, 'utf8')
+//Become data in HTML and replace titles like <a href="#9-checklist">
 const dataHTML = marked.parse(data).replace(/<a href="#\d+-\D+">\d+. \D+<\/a>/g,"I replace #titles of md");
 const $ = cheerio.load(dataHTML);
 
@@ -20,9 +21,7 @@ $('a').each((i, link) => {
         text: $(link).text(),
         file: doc
     }
-    countLinks ++
 })
 
-console.log(arrLinks, `
-      We have ${countLinks} links here`)
-  };
+return arrLinks
+}
