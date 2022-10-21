@@ -1,9 +1,11 @@
 #!/usr/bin/env node
-const myModule = require("./components/getLinks.js");
-let doc = process.argv[2];
+const getLinks = require("./components/getLinks.js");
+const validateLinks = require("./components/validateLinks.js");
+const doc = process.argv[2];
 
-
-myModule(doc)
+let arr = getLinks(doc)
+// let arr2 = arr.map((i)=> i.href)
+validateLinks(arr, doc, `holis`)
 // let directory = process.argv[2]  
 // let ext = process.argv[3];
 
