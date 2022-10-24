@@ -11,15 +11,58 @@
 */
 const fetch = require("node-fetch")
 
-module.exports = (data, doc, text) => {
-data.forEach((i) => {
-    fetch(i)
-    .then((response) => {
-     console.log(doc, response.url, response.statusText, response.status, text)
-    // console.log(response)
+// const lista = [1,2,3]
+
+// const newLista = lista.map((numero)=>{
+//   const promesa = new Promise((resolve,reject)=>{})
+//   return promesa
+//   // console.log(numero)
+// })
+
+// console.log(Promise.all(newLista).then(resultado=>console.log('resultado,', resultado)))
+
+// module.exports = (data, doc, text) => {
+// data.forEach((i) => {
+//     fetch(i)
+//     .then((response) => {
+//      console.log(doc, response.url, response.statusText, response.status, text)
+//     // console.log(response)
+//     })
+//     .catch(function (err) {
+//       console.log(`We have a problem with your url, please check this ${err}`);
+//     });
+// })
+// }
+module.exports = (links) => {
+ new Promise ((resolve, reject) => {
+    let arrLinks = links.map((obj) => {
+
+      //then -> return -> desde afuera
+
+        return fetch(obj.href)
+        .then((res) => {
+          const data = {
+            ...obj,
+            status: res.status,
+            statusText: "ok",
+          }
+          // console.log(data)
+          return data
+             
+        })
+        .catch( (err) => {
+          const data = {
+            ...obj,
+            status: err.message,
+            statusText: "fail",
+          }
+          // console.log(data)
+          return data
+        });
     })
-    .catch(function (err) {
-      console.log(`We have a problem with your url, please check this ${err}`);
-    });
-})
+
+    //resolve mi nueva promesa (valor)
+    Promise.all(arrLinks).then(console.log)
+    resolve()
+  })
 }
