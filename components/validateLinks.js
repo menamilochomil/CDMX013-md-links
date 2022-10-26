@@ -34,35 +34,39 @@ const fetch = require("node-fetch")
 // })
 // }
 module.exports = (links) => {
- new Promise ((resolve, reject) => {
     let arrLinks = links.map((obj) => {
-
       //then -> return -> desde afuera
-
         return fetch(obj.href)
         .then((res) => {
-          const data = {
-            ...obj,
-            status: res.status,
-            statusText: "ok",
+          if(res.status < 400) {
+            const data = {
+              ...obj,
+              status: res.status,
+              statusText: "ok",
+            }
+            return data
+          } else {
+            const data = {
+              ...obj,
+              status: res.status,
+              statusText: "fail",
+            }
+            return data
           }
           // console.log(data)
-          return data
-             
         })
         .catch( (err) => {
           const data = {
             ...obj,
             status: err.message,
-            statusText: "fail",
+            statusText: "error",
           }
           // console.log(data)
           return data
         });
     })
-
     //resolve mi nueva promesa (valor)
-    Promise.all(arrLinks).then(console.log)
-    resolve()
-  })
+    return (Promise.all(arrLinks))
+    // resolve()
+
 }
