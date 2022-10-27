@@ -1,10 +1,28 @@
-const fs = require('fs');
+const getLinks = require("./components/getLinks.js");
+const validateLinks = require("./components/validateLinks.js");
+const getStats = require("./components/getStats.js");
+const getBroken = require("./components/getBrokenLinks.js");
 
-module.exports = (doc) => {
-  fs.readFile(doc, "utf8", function (err, data) {
-    if(err) {
-      return console.log(err);
+const mdLinks = (path, options) => {
+  return new Promise (function (resolve, reject) {
+    if(options.validate){
+      resolve (validateLinks(getLinks(path)).then(console.log))
     }
-      return console.log(data);
-  });
-};
+    if(!options.validate){
+      resolve(console.log(getLinks(path)))
+    } 
+    if(options.stats){
+      resolve (getStats(getLinks(path)).then(console.log))
+    }
+    if(options.stats && options.validate){
+      resolve (getBroken(validateLinks(getLinks(path))))
+    }
+  }
+  )
+}
+
+// module.exports = {
+//   mdLinks
+// }
+
+mdLinks("./md/x.md", { stats: true, validate: true})
