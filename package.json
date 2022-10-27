@@ -7,7 +7,7 @@
   "license": "ISC",
   "type": "commonjs",
   "bin": {
-    "mdLinks": "cli.js"
+    "md-links": "cli.js"
   },
   "engines": {
     "node": ">=16.x"
