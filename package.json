@@ -39,7 +39,6 @@
   },
   "homepage": "https://github.com/menamilochomil/CDMX013-md-links#readme",
   "devDependencies": {
-    "jest-fetch-mock": "^3.0.3",
     "eslint": "^8.3.0",
     "jest": "^27.0.1" 
   }
