@@ -14,15 +14,12 @@ const mdLinks = (path, options) => {
     if(options.stats){
       resolve (getStats(getLinks(path)).then(console.log))
     }
-    if(options.stats && options.validate){
-      resolve (getBroken(validateLinks(getLinks(path))))
-    }
   }
   )
 }
 
-// module.exports = {
-//   mdLinks
-// }
+module.exports = {
+  mdLinks
+}
 
-mdLinks("./md/x.md", { stats: true, validate: true})
+// mdLinks("./md/x.md", { stats: true})
