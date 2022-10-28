@@ -24,8 +24,9 @@
     "filesystem"
   ],
   "dependencies": {
+    "chalk": "^4.1.2",
     "cheerio": "^1.0.0-rc.12",
-    "node-fetch": "^2.6.7"    
+    "node-fetch": "^2.6.7"
   },
   "directories": {
     "test": "test"
@@ -40,6 +41,6 @@
   "homepage": "https://github.com/menamilochomil/CDMX013-md-links#readme",
   "devDependencies": {
     "eslint": "^8.3.0",
-    "jest": "^27.0.1" 
+    "jest": "^27.0.1"
   }
 }
