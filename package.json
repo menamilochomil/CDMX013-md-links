@@ -14,7 +14,7 @@
   },
   "scripts": {
     "eslint": "eslint --ext .js test/",
-    "test": "jest --verbose --coverage --watch"
+    "test": "jest --verbose --coverage"
   },
   "keywords": [
     "cli-app",
