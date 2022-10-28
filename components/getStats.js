@@ -5,7 +5,7 @@ module.exports = (links) => {
     //Gets the unique links
         const setUnique = [...new Set (arrLinks)];
         let uniqueLinks = "";
-        const uniqueFor = setUnique.forEach((value) => {
+        setUnique.forEach((value) => {
             uniqueLinks += value + "\n";
           })
     //Gets the repeat links
