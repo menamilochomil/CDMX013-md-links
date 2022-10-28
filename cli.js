@@ -6,7 +6,7 @@ const chalk = require("chalk")
 
 const cli = (path, option) => {
    if(path === undefined ) {
-    console.log(chalk.red("Please, enter a path valid"))   
+    console.log(chalk.red("Please, write a path valid"))   
    }
    else if(option[3] === undefined){
       return mdLinks(path, {validate: false}).then(res => {
