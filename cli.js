@@ -2,19 +2,20 @@
 const args = process.argv;
 const route = process.argv[2];
 const {mdLinks} = require("./index.js");
+const chalk = require("chalk")
 
 const cli = (path, option) => {
    if(path === undefined ) {
-    console.log("Please, enter a path valid")   
+    console.log(chalk.red("Please, enter a path valid"))   
    }
    else if(option[3] === undefined){
       return mdLinks(path, {validate: false}).then(res => {
          res.map((item)=>{
-            console.log(`
-        href: ${item.href}
-        text: ${item.text}
-        file: ${item.file}
-                `)
+            console.log(chalk.hex("#27F7E7")(
+            `href: ${item.href}
+text: ${item.text}
+file: ${item.file}
+`))
                })
       })
    }
@@ -22,7 +23,7 @@ const cli = (path, option) => {
       // console.log("holi")
       return mdLinks(path, {validate: true}).then(res => {
          res.map(item => {
-            console.log(`${item.file} ${item.href} ${item.statusText} ${item.status} ${item.text}`)
+         console.log(item.file,item.href,chalk.hex("#2728F7")(item.statusText, item.status), item.text )
                })
       })
    }
