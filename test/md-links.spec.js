@@ -1,8 +1,6 @@
 const validateLinks = require('../components/validateLinks.js');
 const {arr, arrStats} = require('./mockdata.js');
 // jest.mock("node-fetch")
-// const {enableFetchMocks} = require('jest-fetch-mock')
-// enableFetchMocks(
 describe('mdLinks', () => {
 
   test('should a function', () => {
