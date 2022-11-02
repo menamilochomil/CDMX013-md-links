@@ -4,7 +4,7 @@ const getBroken = require("../components/getBrokenLinks.js");
 const {arr, arrStats, stats} = require('./mockdata.js');
 // jest.mock("node-fetch")
 
-describe('mdLinks', () => {
+describe('validate links', () => {
 
   test('validateLinks should be a function', () => {
     expect(typeof validateLinks).toBe('function');
@@ -20,16 +20,26 @@ describe('mdLinks', () => {
       expect(results).toEqual(arrStats)
     })
   });
+});
+
+describe('stats', () => {
 
   test('getStats should be a function', () => {
     expect(typeof getStats).toBe('function');
     expect(typeof getStats).not.toBe('string');
   });
 
+  // test.only('should return an string with stats', () => {
+  //   return (getStats(arrStats)).then((results) => {
+  //     expect(results).toEqual(stats)
+  //   })
+  // });
+
   test('getBroken should be a function', () => {
     expect(typeof getBroken).toBe('function');
     expect(typeof getBroken).not.toBe('string');
   });
 });
+
 
   
