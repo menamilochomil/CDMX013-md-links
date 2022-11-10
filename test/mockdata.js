@@ -27,7 +27,15 @@ const arrStats = [
     }
 ]
 
-const stats = "./md/x.md https://es.wikipedia.org/wiki/Markdown ok 200 Markdown"
+const stats = `Total: 2
+Unique: 2
+List of unique links:
+https://es.wikipedia.org/wiki/Markdown
+https://www.gog.com/error/404
+
+
+Repeat: 0
+List of repeat links:`
 
 module.exports = {
 arr,
